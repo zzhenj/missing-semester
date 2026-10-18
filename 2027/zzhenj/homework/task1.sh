@@ -1,6 +1,11 @@
 #!/bin/bash
 
+>output.txt
+
+echo "系统时间是：">> output.txt
 date >> output.txt
+echo "最近使用的十条命令：">> output.txt
 tail /root/.bash_history >> output.txt
-grep -oP '[\x{4e00}-\x{9fa5}]' | wc -l < /root/rm_ws/src/learngit/missing-semester/2027/notes/First_note.md >> output.txt
+echo "笔记的字数：" >> output.txt
+wc -m < ../notes/First_note.md >> output.txt
 
